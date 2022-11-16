@@ -1,0 +1,17 @@
+pipeline {
+    agent any 
+    parameters{
+        string (name: 'user', description:'hi')
+    }
+    stages {
+        stage ('stage-1'){
+            input {
+                message " can we do?"
+                submitter "jenkins, aws"
+            }
+            steps{
+                echo "${user}"
+            }
+        }
+    }
+}
